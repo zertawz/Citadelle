@@ -72,7 +72,7 @@ public class Quartier{
 	    }
 	  }
 	  else if (!nom.equals(other.nom)){
-	    return false
+	    return false;
 	  }
 	  if (type != other.type){
 	    return false;

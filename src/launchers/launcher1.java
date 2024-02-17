@@ -1,4 +1,13 @@
+package launchers;
+
+import model.quartier;
+
 public class Launcher{
+
+  public static void main(String[] arg){
+    TestQuartier();
+  }
+
   public static void TestQuartier(){
     Quartier q1 = new Quartier(QuartierType.Noble, "Manoir");
     Quartier q2 = new Quartier(QuartierType.Commercant, 4, "port");
@@ -18,8 +27,5 @@ public class Launcher{
     System.out.println(q3.equals(q4));
     System.out.println(q3.equals(q5));
 
-    public static void main(String[] arg){
-      TestQuartier();
-    }
   }
 }
