@@ -1,8 +1,8 @@
 package launchers;
 
-import model.quartier;
+import model.quartier.*;
 
-public class Launcher{
+public class launcher1{
 
   public static void main(String[] arg){
     TestQuartier();

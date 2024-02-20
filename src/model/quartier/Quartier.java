@@ -1,9 +1,5 @@
 package model.quartier;
 
-public enum QuartierType{
-  Noble, Religieux, Commercant, Militaire, Merveille
-}
-
 public class Quartier{
   private static int MIN_VALUE = 1;
   private static int MAX_VALUE = 8;
@@ -13,11 +9,13 @@ public class Quartier{
   private String nom;
 	
 	public Quartier(QuartierType type, int valeur, String nom){
-	  //TODO
+    this.setQuartier(type);
+    this.setValeur(valeur);
+    this.setNom(nom);
 	}
 	
 	public Quartier(QuartierType type, String nom){
-	  //TODO
+    this(type, DEFAULT_VALUE, nom);
 	}
 	
 	protected void setNom(String nom){
@@ -35,7 +33,10 @@ public class Quartier{
 	}
 	
 	protected void setValeur(int v){
-	  //TODO
+    valeur = DEFAULT_VALUE;
+    if (v>=MIN_VALUE && v<=MAX_VALUE) {
+      valeur = v;
+    }
 	}
 	
 	public QuartierType getType() {return type;}
@@ -46,7 +47,7 @@ public class Quartier{
 	
 	@Override
 	public String toString(){
-	  return getNom()+" ("+ getType() + ", valeur: " + "*".repeat(getValeur())+")";
+	  return getNom()+ " ("+ getType() + ", valeur: " + "*".repeat(getValeur())+")";
 	}
 	
 	@Override
