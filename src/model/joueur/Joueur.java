@@ -1,6 +1,8 @@
 package model.joueur;
 
-public interface Joueur extends extends Comparable<Joueur>{
+import model.quartier.*;
+
+public interface Joueur extends Comparable<Joueur>{
   public int getScore();
   public boolean aFiniSaCite();
   public boolean construire(Quartier q);

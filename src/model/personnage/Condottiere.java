@@ -1,6 +1,6 @@
 package model.personnage;
 
-public Condottiere extend AbstractPersonnage{
+public class Condottiere extends AbstractPersonnage{
 
   public Condottiere(){
   //TODO

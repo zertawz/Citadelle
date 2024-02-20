@@ -48,7 +48,7 @@ public class ConcreteJoueur implements Joueur{
   public String toString(){
     String ret = "Joueur "+nom+" (score: "+getScore()+", pieces: "+pieces+")\nQuartiers Joues:\n";
     ret+=quartiersToString(quartiersJoues);
-    ret+="Main:\n"
+    ret+="Main:\n";
     ret+=quartiersToString(main);
     return ret;
   }
@@ -56,7 +56,7 @@ public class ConcreteJoueur implements Joueur{
   private String quartiersToString(Collection<Quartier> quartiers){
     String ret = "";
     for (Quartier q: quartiers){
-      ret += "\t * "+q+"\n"
+      ret += "\t * "+q+"\n";
     }
     return ret;
   }

@@ -1,6 +1,6 @@
 package model.personnage;
 
-public Marchand extend AbstractPersonnage{
+public class Marchand extends AbstractPersonnage{
 
   public Marchand(){
   //TODO

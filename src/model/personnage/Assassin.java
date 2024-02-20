@@ -1,6 +1,6 @@
 package model.personnage;
 
-public class Assassin extend AbstractPersonnage {
+public class Assassin extends AbstractPersonnage {
 
   public Assassin(){
     //TODO
