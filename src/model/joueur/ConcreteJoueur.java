@@ -1,5 +1,9 @@
 package model.joueur;
 
+import java.util.*;
+import model.quartier.*;
+import model.personnage.*;
+
 public class ConcreteJoueur implements Joueur{
   private static final int NB_QUARTIERS_FIN = 7;
   private static final int NB_PIECES_DEBUT = 2;
@@ -53,7 +57,7 @@ public class ConcreteJoueur implements Joueur{
     return ret;
   }
 
-  private String quartiersToString(Collection<Quartier> quartiers){
+  private String quartiersToString(Collections<Quartier> quartiers){
     String ret = "";
     for (Quartier q: quartiers){
       ret += "\t * "+q+"\n";
@@ -88,7 +92,7 @@ public class ConcreteJoueur implements Joueur{
 
   @Override
   public void choisirPersonnage(List<Personnage> persoAChoisir){
-    Collection.shuffle(persoAChoisir);
+    Collections.shuffle(persoAChoisir);
     persoAChoisir.remove(0).setJoueur(this);
   }
 

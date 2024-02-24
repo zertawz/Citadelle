@@ -1,6 +1,8 @@
 package model.joueur;
 
 import model.quartier.*;
+import model.personnage.*;
+import java.util.*;
 
 public interface Joueur extends Comparable<Joueur>{
   public int getScore();

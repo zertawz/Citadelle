@@ -1,5 +1,7 @@
 package model.personnage;
 
+import model.joueur.*;
+
 public abstract class AbstractPersonnage implements Personnage{
   private int ordre;
   protected Joueur joueur;
@@ -9,7 +11,7 @@ public abstract class AbstractPersonnage implements Personnage{
     this.ordre = ordre;
     joueur = null;
   }
-  public AbstractPersonnage(int ordre, joueur J){
+  public AbstractPersonnage(int ordre, Joueur j){
     this.ordre = ordre;
     joueur = j;
   }
