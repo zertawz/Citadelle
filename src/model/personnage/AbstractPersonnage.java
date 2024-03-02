@@ -27,7 +27,22 @@ public abstract class AbstractPersonnage implements Personnage{
   protected abstract void action(Personnage p);
 
   @Override
-  public boolean estActif(){
-    //TODO
+  public boolean estActif(){return actif ;}
+
+  public void setActif(boolean b) {actif = b;}
+  
+  @Override
+  public final void jouer()
+    if(joueur==null) {
+      System.out.println("Pas de joueur pour "+getClass().getSimpleName());
+    }
+    else {
+      System.out.println(getClass().getSimpleName() +" est le joueur " + joueur.getNom() );
+      if(!this.estActif()) {System.out.println(" mais il ne peut pas jouer");}
+      //TODO
+      //else {
+        //this.action(. . . . . .);
+      }
+    }
   }
 }
