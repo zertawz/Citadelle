@@ -40,7 +40,22 @@ public class ConcreteJoueur implements Joueur{
   }
 
   public int getScore(){
-    //TODO
+    int score = 0;
+    Set<QuartierType> typesQuartiers = new HashSet<QuartierType>();
+    for(Quartier q: quartiersJoues) {
+      score+= q.getValeur();
+      typesQuartiers.add(q.getType());
+    }
+    if(typesQuartiers.size()==QuartierType.values().length) {
+      score+=3;
+    }
+    if(this == premier) {
+      score += 4;
+    }
+    else if(aFiniSaCite()) {
+      score +=2;
+    }
+    return score;
   }
 
   @Override
@@ -73,16 +88,27 @@ public class ConcreteJoueur implements Joueur{
 
   public boolean construire(Quartier q){
     boolean ret = false;
-    //TODO
+    if (main.contains(q) && q.getValeur()<=pieces && !
+      quartiersJoues.contains(q)) {
+      main.remove(q);
+      quartiersJoues.add(q);
+      pieces = pieces - q.getValeur();
+      ret = true;
+    }
     return ret;
   }
 
   @Override
   public boolean piocher(List<Quartier> pioche, int nbCarte){
+    boolean ret = true ;
+    if(nbcarte>pioche.size()){
+      ret = false;
+      nbCarte = pioche.size();
+    }
     for (int i=0; i<nbCarte; i++){
       main.add(pioche.remove(0));
     }
-    return true;
+    return ret;
   }
 
   @Override

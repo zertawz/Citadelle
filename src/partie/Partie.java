@@ -34,7 +34,7 @@ public class Partie {
           joueurs.add(new ConcreteJoueur(entree.getValue(), main));
         }
         else {
-          joueurs.add(); //TODO
+          joueurs.add(new ConcreteJoueur(entree.getValue(), main);
         }
         pioche.removeAll(main);
       }
@@ -63,7 +63,8 @@ public class Partie {
   }
   
   private Joueur getPlusAge() {
-  //TODO
+    TreeSet<Joueur> ts = new TreeSet<Joueur>(joueurs);
+    return ts.first();
   }
   
   private final void nouveauTour() {
@@ -89,9 +90,12 @@ public class Partie {
     //on mélange la liste (c'est pour pouvoir mélanger qu'on utilise une liste et pas un set)
     Collections.shuffle(persoAChoisir);
     //on retire le premier personnage de persoAChoisir mais pas si c'est le roi (il faut recommencer l'opération tant que c'est le cas)
-    //TODO
-
-    //TODO
+    Personnage persoEcarte = persoAChoisir.remove(0);
+    while(persoEcarte instanceof Roi) {
+      persoAChoisir.add(persoEcarte);
+      Collections.shuffle(persoAChoisir);
+      persoEcarte = persoAChoisir.remove(0);
+    }
     //copie des joueurs dans une liste pour faciliter la navigation
     List<Joueur> lesJoueursOrdonnes = new ArrayList<Joueur>(joueurs);
     //recherche de la place du joueur actuellement roi
